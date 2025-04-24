@@ -1,30 +1,34 @@
-## Bike Servicing Management API
+# Bike Servicing Management API
 
 A modular RESTful API built using Node.js, Express, TypeScript, PostgreSQL, and Prisma. This system manages customer profiles, bike details, and service records.
 
-## 📁 Tech Stack
+# Live backend link
 
-# Node.js
+## https://a8-bike-servicing-management-efbna01nb.vercel.app/
 
-# Express.js
+# 📁 Tech Stack
 
-# TypeScript
+## Node.js
 
-# PostgreSQL
+## Express.js
 
-# Prisma ORM
+## TypeScript
 
-# Modular Architecture
+## PostgreSQL
 
-## 🧩 Features
+## Prisma ORM
+
+## Modular Architecture
+
+# 🧩 Features
 
 Create, Read, Update, and Delete (CRUD) operations for:
 
-# Customers
+## Customers
 
-# Bikes
+## Bikes
 
-# Service Records
+## Service Records
 
     ~ Relational handling between Customer → Bike → ServiceRecord
 
@@ -32,19 +36,19 @@ Create, Read, Update, and Delete (CRUD) operations for:
 
     ~ Modular and scalable folder structure
 
-## ⚙️ Installation & Setup
+# ⚙️ Installation & Setup
 
-# 1. Clone the repository
+## 1. Clone the repository
 
     ~ git clone https://github.com/your-username/bike-servicing-api.git
 
     ~ cd bike-servicing-api
 
-# 2. Install dependencies
+## 2. Install dependencies
 
     yarn install
 
-# 3. Setup environment variables
+## 3. Setup environment variables
 
     # Then configure DATABASE_URL in .env (
         1.DATABASE_URL
@@ -52,11 +56,11 @@ Create, Read, Update, and Delete (CRUD) operations for:
         3.PORT
     )
 
-## 4. Setup Prisma and DB
+# 4. Setup Prisma and DB
 
 npx prisma generate
 npx prisma migrate dev --name init
 
-## 5. Run the project
+# 5. Run the project
 
 yarn dev
