@@ -3,23 +3,6 @@ import { customerServices } from "./customer.service";
 import catchAsync from "../../shared/catchAsync";
 import sendResponse from "../../shared/sendResponse";
 
-// const createCustomer = async (req: Request, res: Response) => {
-//   try {
-//     //console.log(req.body);
-//     const result = await customerServices.createCustomerIntoDB(req.body);
-//     res.status(200).json({
-//       success: true,
-//       message: "Admin Created successfuly!",
-//       data: result,
-//     });
-//   } catch (err) {
-//     res.status(500).json({
-//       success: false,
-//       message: err?.name || "Something went wrong",
-//       error: err,
-//     });
-//   }
-// };
 const createCustomer = catchAsync(async (req: Request, res: Response) => {
   //   console.log(req.body);
   const customerData = req.body;
@@ -28,7 +11,7 @@ const createCustomer = catchAsync(async (req: Request, res: Response) => {
 
   sendResponse(res, {
     success: true,
-    statusCode: 200,
+    statusCode: 201,
     message: "Customer created successfully",
     data: result,
   });

@@ -1,19 +1,19 @@
-import express from "express";
+import express, { Router } from "express";
 import { serviceControllers } from "./serviceRecord.controllers";
 import validateRequest from "../../middlewares/validateRequest";
 import { serviceRecordValidationSchemas } from "./serviceRecord.validation";
-const router = express.Router();
+const serviceRecordRouter = Router();
 
-router.post("/create-service", serviceControllers.createService);
-router.get("/", serviceControllers.getAllServices);
+serviceRecordRouter.post("/services", serviceControllers.createService);
+serviceRecordRouter.get("/services", serviceControllers.getAllServices);
 // get all service that status are (pending or in_progress )
-router.get("/status/", serviceControllers.getStatusServices);
-router.get("/:serviceId", serviceControllers.getSingleService);
-router.put(
-  "/:serviceId",
+serviceRecordRouter.get("/services/status", serviceControllers.getStatusServices);
+serviceRecordRouter.get("/services/:serviceId", serviceControllers.getSingleService);
+serviceRecordRouter.put(
+  "/services/:serviceId",
   validateRequest(serviceRecordValidationSchemas.updateServiceRecordWithZod),
   serviceControllers.updateService
 );
-router.delete("/:serviceId", serviceControllers.deleteService);
+serviceRecordRouter.delete("/services/:serviceId", serviceControllers.deleteService);
 
-export const ServiceRecordRoutes = router;
+export const ServiceRecordRoutes = serviceRecordRouter;

@@ -4,14 +4,14 @@ import sendResponse from "../../shared/sendResponse";
 import { serviceRecordServices } from "./serviceRecord.service";
 
 const createService = catchAsync(async (req: Request, res: Response) => {
-  console.log(req.body);
+  // console.log(req.body);
   const serviceData = req.body;
 
   const result = await serviceRecordServices.createServiceIntoDB(serviceData);
 
   sendResponse(res, {
     success: true,
-    statusCode: 200,
+    statusCode: 201,
     message: "Service created successfully",
     data: result,
   });
