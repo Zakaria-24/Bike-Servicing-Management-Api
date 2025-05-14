@@ -61,6 +61,11 @@ const updateServiceIntoDB = async (
 };
 
 const deleteServiceFromDB = async (serviceId: string) => {
+  await prisma.serviceRecord.findFirstOrThrow({
+    where: {
+      serviceId: serviceId,
+    },
+  });
   const deletedService = await prisma.serviceRecord.delete({
     where: {
       serviceId,

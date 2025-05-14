@@ -41,6 +41,11 @@ const updateBikeIntoDB = async (bikeId: string, bikeData: Bike) => {
 
 // deleteBikeFromDB
 const deleteBikeFromDB = async (bikeId: string) => {
+  await prisma.bike.findFirstOrThrow({
+    where: {
+      bikeId: bikeId,
+    },
+  })
   const deletedBike = await prisma.bike.delete({
     where: {
       bikeId,
