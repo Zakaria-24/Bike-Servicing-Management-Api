@@ -17,12 +17,12 @@ const catchAsync_1 = __importDefault(require("../../shared/catchAsync"));
 const sendResponse_1 = __importDefault(require("../../shared/sendResponse"));
 const serviceRecord_service_1 = require("./serviceRecord.service");
 const createService = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(req.body);
+    // console.log(req.body);
     const serviceData = req.body;
     const result = yield serviceRecord_service_1.serviceRecordServices.createServiceIntoDB(serviceData);
     (0, sendResponse_1.default)(res, {
         success: true,
-        statusCode: 200,
+        statusCode: 201,
         message: "Service created successfully",
         data: result,
     });

@@ -22,7 +22,7 @@ const createBike = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, voi
     const result = yield bike_service_1.bikeServices.createBikeIntoDB(bikeData);
     (0, sendResponse_1.default)(res, {
         success: true,
-        statusCode: 200,
+        statusCode: 201,
         message: "Bike created successfully",
         data: result,
     });
